@@ -1,9 +1,9 @@
 import React from 'react';
 import './styles.scss';
 
-const ForgotPassword = () => {
+const SendEmail = () => {
 	return (
-		<div className="login">
+		<div className="SendEmail">
 			<div className="form-container">
 				<img src="./logos/logo_yard_sale.svg" alt="logo" className="logo" />
 				<h1 className="title">Email has been sent!</h1>
@@ -21,4 +21,4 @@ const ForgotPassword = () => {
 	);
 }
 
-export default ForgotPassword;
+export default SendEmail;
