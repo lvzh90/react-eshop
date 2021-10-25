@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
 const initialState = {
-    cart:[]
+    cart:[],
+    totalOrder:0
 }
 
 const useInitialState = () => {
@@ -10,7 +11,8 @@ const useInitialState = () => {
     const addToCart = (payload) => () => {
         setState({
             ...state,
-            cart: [ ...state.cart, payload]
+            cart: [ ...state.cart, payload],
+            totalOrder: state.totalOrder + payload.price
         })
 
         console.log('CONTEXT STATE: ', state);
