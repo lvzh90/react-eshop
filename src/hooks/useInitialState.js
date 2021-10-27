@@ -14,11 +14,17 @@ const useInitialState = () => {
             cart: [ ...state.cart, payload],
             totalOrder: state.totalOrder + payload.price
         })
-
-        console.log('CONTEXT STATE: ', state);
     }
 
-    return { state, addToCart }
+    const removeFromCart = (payload) => () => {
+        setState({
+            ...state,
+            cart: state.cart.filter(product => product.id !== payload.id),
+            totalOrder: state.totalOrder - payload.price
+        })
+    }
+
+    return { state, addToCart, removeFromCart }
 }
 
 export default useInitialState;
